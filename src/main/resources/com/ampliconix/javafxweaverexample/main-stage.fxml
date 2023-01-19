@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.ampliconix.javafxweaverexample.MyController"
-            prefHeight="100.0" prefWidth="350.0" spacing="10" alignment="CENTER">
+<VBox alignment="CENTER" prefHeight="150.0" prefWidth="300.0" spacing="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ampliconix.javafxweaverexample.MyController">
+   <Label text="Response" />
+   <TextArea fx:id="responseText" maxWidth="100.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Enter response message" />
+    <Button onAction="#loadWeatherForecast" text="Clear log">Get weather</Button>
 
-    <Label fx:id="weatherLabel"/>
-    <Button onAction="#loadWeatherForecast">Get weather</Button>
+    <Label fx:id="label" minWidth="-Infinity" prefHeight="40.0">
+      <VBox.margin>
+         <Insets />
+      </VBox.margin></Label>
 </VBox>

@@ -6,12 +6,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 public class JavaFxApplication extends Application {
 
     private ConfigurableApplicationContext applicationContext;
+
+    final int port = 8083;
 
     @Override
     public void init() {
@@ -27,6 +30,7 @@ public class JavaFxApplication extends Application {
         FxWeaver fxWeaver = applicationContext.getBean(FxWeaver.class);
         Parent root = fxWeaver.loadView(MyController.class);
         Scene scene = new Scene(root);
+        stage.setTitle("Local port: " + port);
         stage.setScene(scene);
         stage.show();
     }
